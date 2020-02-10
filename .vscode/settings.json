@@ -1,0 +1,11 @@
+{
+  "solargraph.useBundler": true,
+  "[ruby]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": false,
+  },
+  "terminal.integrated.env.linux": {
+    "DATABASE_USER": "postgres",
+    "DATABASE_PASSWORD": "mysecretpassword1234"
+  }
+}
