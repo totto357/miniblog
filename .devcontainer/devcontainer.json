@@ -1,0 +1,20 @@
+{
+  "name": "miniblog",
+  // "dockerFile": "Dockerfile",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  "appPort": 3000,
+  "workspaceFolder": "/workspaces/miniblog",
+  "extensions": [
+    "shardulm94.trailing-spaces",
+    "wmaurer.change-case",
+    "rebornix.ruby",
+    "castwide.solargraph",
+    "mbessey.vscode-rufo",
+    "kaiwood.endwise"
+  ],
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "postCreateCommand": "bundle install --path vendor/bundle"
+}
