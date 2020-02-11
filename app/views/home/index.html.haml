@@ -1,3 +1,9 @@
-%div.status__wrapper.py-2
-  = render @statuses
+- content_for :header_tags do
+  = javascript_pack_tag "home"
+
+= render "shared/drawer"
+
+.container
+  .status__wrapper.py-2
+    = render @statuses
     = paginate @statuses

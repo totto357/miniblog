@@ -1,0 +1,25 @@
+@import "application"
+
+$drawer-width: 300px
+
+.drawer
+  position: sticky
+  width: $drawer-width
+  height: calc(100vh - #{$header-height})
+  top: $header-height
+  z-index: 999
+
+.container
+  width: calc(100% - #{$drawer-width})
+
+@include media-breakpoint-down(sm)
+  .drawer
+    width: 100%
+    height: auto
+    position: relative
+    top: 0
+
+  .container
+    width: 100%
+    max-width: 100%
+    padding: 0

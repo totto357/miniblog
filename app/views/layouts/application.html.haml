@@ -5,15 +5,12 @@
     %title Miniblog
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_pack_tag "application", media: "all"
     = javascript_pack_tag "application"
+    = yield :header_tags
 
   %body{ class: "#{controller_name}_controller--#{action_name}"}
     = render "shared/header"
 
     .px-3
       .content
-        = render "shared/drawer"
-
-        .container
-          = yield
+        = yield
