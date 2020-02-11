@@ -1,24 +1,37 @@
-# README
+# ミニブログ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+日常のふとした思いつきを誰しも広くシェアできるサービス。
 
-Things you may want to cover:
+## 本番URL
 
-* Ruby version
+準備中
 
-* System dependencies
+## バージョン
 
-* Configuration
+- ruby 2.6.5
+- rails 6.0.2.1
+- PostgreSQL 12.1
 
-* Database creation
+## 初期設定
 
-* Database initialization
+以下のコマンドを実行して初期設定を行います。
 
-* How to run the test suite
+```sh
+# アプリ初期設定
+docker-compose build
+docker-compose run web bundle install --path vendor/bundle
+docker-compose run web bundle exec yarn install
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース初期設定
+docker-compose run web bundle exec rails db:create
+docker-compose run web bundle exec rails db:migrate
+docker-compose run web bundle exec rails db:seed
+```
 
-* Deployment instructions
+## 起動方法
 
-* ...
+以下のコマンドを実行してアプリケーションを起動します。
+
+```sh
+docker-compose up
+```
