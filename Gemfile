@@ -15,6 +15,7 @@ gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "faker"
 end
 
 group :development do
@@ -29,7 +30,6 @@ end
 group :test do
   gem "rspec-rails", "~> 3.9.0"
   gem "factory_bot_rails"
-  gem "faker"
   gem "capybara"
   gem "selenium-webdriver"
 end
