@@ -1,0 +1,53 @@
+@import "~bootstrap/scss/bootstrap"
+@import "toastr"
+
+$view-max-width: 1100px
+$header-height: 56px
+$drawer-width: 300px
+
+.spacer
+  flex-grow: 1
+
+.header
+  height: $header-height
+  z-index: 1000
+  display: block
+
+  &__content
+    max-width: $view-max-width
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: 0 auto
+
+.content
+  max-width: $view-max-width
+  display: flex
+  flex-direction: row
+  margin: auto
+
+.drawer
+  position: sticky
+  width: $drawer-width
+  height: calc(100vh - #{$header-height})
+  top: $header-height
+  z-index: 999
+
+.container
+  width: calc(100% - #{$drawer-width})
+
+
+@include media-breakpoint-down(sm)
+  .content
+    flex-direction: column
+
+  .drawer
+    width: 100%
+    height: auto
+    position: relative
+    top: 0
+
+  .container
+    width: 100%
+    max-width: 100%
+    padding: 0

@@ -1,0 +1,4 @@
+= simple_form_for(@status, remote: true) do |f|
+  = f.input :text, placeholder: "いまどうしてる？", label: false
+  .d-flex.justify-content-end
+    = f.button :submit, "投稿する", class: "btn-primary"

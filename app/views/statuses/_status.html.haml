@@ -1,0 +1,7 @@
+.card.status.my-2
+  .card-body
+    .card-text<
+      = status.text
+    .card-subtitle.d-flex.justify-content-end
+      %small.text-muted<
+        = l status.created_at, format: :long

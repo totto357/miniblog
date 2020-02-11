@@ -1,11 +1,19 @@
-!!!
+!!! 5
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
     %title Miniblog
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_pack_tag "application", media: "all"
     = javascript_pack_tag "application"
-  %body
-    = yield
+
+  %body{ class: "#{controller_name}_controller--#{action_name}"}
+    = render "shared/header"
+
+    .px-3
+      .content
+        = render "shared/drawer"
+
+        .container
+          = yield
