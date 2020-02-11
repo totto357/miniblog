@@ -3,17 +3,20 @@ version: "3"
 services:
   web:
     build: .devcontainer
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     ports:
       - "3000:3000"
+      - "3035:3035"
     environment:
-      - "DATABASE_HOST=db"
-      - "DATABASE_PORT=5432"
-      - "DATABASE_USER=postgres"
-      - "DATABASE_PASSWORD=mysecretpassword1234"
+      DATABASE_HOST: db
+      DATABASE_PORT: 5432
+      DATABASE_USER: postgres
+      DATABASE_PASSWORD: mysecretpassword1234
     links:
       - db
     volumes:
-      - "./:/workspaces/miniblog"
+      - ./:/workspaces/miniblog
+      - bundle-install:/usr/local/bundle
     stdin_open: true
 
   db:
@@ -21,5 +24,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - "POSTGRES_USER=postgres"
-      - "POSTGRES_PASSWORD=mysecretpassword1234"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword1234
+
+volumes:
+  bundle-install:
