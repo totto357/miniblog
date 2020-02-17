@@ -5,5 +5,8 @@
 
 .container
   .status__wrapper.py-2
-    = render @statuses
-    = paginate @statuses
+    - if @statuses.any?
+      = render @statuses
+      = paginate @statuses
+    - else
+      #no-statuses-alert.alert.alert-warning.my-2 投稿がありません。

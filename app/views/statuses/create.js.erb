@@ -1,2 +1,5 @@
-$("<%= j(render @status) %>").prependTo(".status__wrapper");
+const $alert = $("#no-statuses-alert")[0]
+$alert && $alert.remove()
+
+$("<%= j(render @status) %>").prependTo(".status__wrapper")
 $("#status_text")[0].value = ""
